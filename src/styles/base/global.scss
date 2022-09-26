@@ -1,0 +1,68 @@
+html {
+  box-sizing: border-box;
+  font-family: -apple-system, Roboto, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+body {
+  overflow-y: scroll;
+}
+
+a {
+  color: inherit;
+  pointer-events: auto;
+  text-decoration: none;
+  display: inline-block;
+}
+
+button {
+  background: none;
+  border: none;
+  border-radius: none;
+  color: inherit;
+  font: inherit;
+  pointer-events: auto;
+}
+
+input,
+textarea {
+  appearance: none;
+  background: none;
+  border: none;
+  border-radius: 0;
+  pointer-events: auto;
+}
+
+img,
+svg {
+  vertical-align: center;
+}
+
+body {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 99.95%;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+html {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overscroll-behavior: none;
+}
+
+img {
+  user-select: none;
+  pointer-events: none;
+}
+
+*,
+*:before,
+*:after {
+  user-select: none;
+}
