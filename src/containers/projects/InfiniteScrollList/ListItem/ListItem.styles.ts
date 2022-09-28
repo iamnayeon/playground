@@ -17,10 +17,11 @@ export const Title = styled.h3`
 
 export const Image = styled.img`
   position: fixed;
+  z-index: -1;
   left: 45vw;
   top: 30vh;
   opacity: 0;
-  height: clamp(300px, 30vw, 30vw);
+  height: clamp(250px, 25vw, 25vw);
   width: auto;
   pointer-events: none;
   object-fit: cover;
