@@ -15,8 +15,8 @@ const ListItem = (props: Props) => {
       <S.Image src={imageUrl} />
 
       <S.InfoBlockWrapper>
-        {infos.map((info) => (
-          <S.InfoItem>{info}</S.InfoItem>
+        {infos.map((info, i) => (
+          <S.InfoItem key={i}>{info}</S.InfoItem>
         ))}
       </S.InfoBlockWrapper>
     </S.Wrapper>

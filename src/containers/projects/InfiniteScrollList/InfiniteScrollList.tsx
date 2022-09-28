@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, ReactEventHandler, useCallback } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import { Head } from "general/Head/Head";
 import { pageData } from "./InfiniteScrollList.data";
 import ListItem from "./ListItem/ListItem";
@@ -35,39 +35,29 @@ const InfiniteScrollList = () => {
     if (currentScrollPos <= 0) setScrollPos(1);
   }, []);
 
-  const _scrollUpdate = useCallback((e: any) => {
-    if (!listWrapperRef.current) return;
+  const onScrollUpdate = useCallback((e: React.UIEvent<HTMLDivElement>) => {
     const scrollPosition = getScrollPos() || 0;
-
-    if (clonedListHeight.current + scrollPosition >= listWrapperRef.current.scrollHeight) {
+    if (clonedListHeight.current + scrollPosition >= e.currentTarget.scrollHeight) {
       //scroll to top when reach the bottom
       setScrollPos(1);
     } else if (scrollPosition <= 0) {
       //scroll to bottom when reach the top
-      setScrollPos(listWrapperRef.current.scrollHeight - clonedListHeight.current);
+      setScrollPos(e.currentTarget.scrollHeight - clonedListHeight.current);
     }
   }, []);
 
   useEffect(() => {
     cloneListItems();
     initScrollPos();
-
-    if (!listWrapperRef.current) return;
-    listWrapperRef.current.addEventListener("scroll", _scrollUpdate);
-
-    return () => {
-      if (!listWrapperRef.current) return;
-      listWrapperRef.current.removeEventListener("scroll", _scrollUpdate);
-    };
   }, []);
 
   return (
     <>
       <Head />
       <S.Wrapper>
-        <S.ListWrapper ref={listWrapperRef}>
-          {renderedListItems.map((item) => (
-            <ListItem title={item.title} imageUrl={item.url} />
+        <S.ListWrapper ref={listWrapperRef} onScroll={onScrollUpdate}>
+          {renderedListItems.map((item, i) => (
+            <ListItem title={item.title} imageUrl={item.url} key={i} />
           ))}
         </S.ListWrapper>
       </S.Wrapper>
