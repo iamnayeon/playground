@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { media } from "utils/media";
 
 export const Wrapper = styled.div`
   cursor: pointer;
@@ -52,8 +53,13 @@ export const InfoBlockWrapper = styled.div`
   text-align: left;
   font-size: 20px;
   opacity: 0;
+  display: none;
   ${Wrapper}:hover & {
     opacity: 1;
+  }
+
+  ${media.tablet} {
+    display: block;
   }
 `;
 
