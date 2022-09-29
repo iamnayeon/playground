@@ -58,7 +58,7 @@ export const InfoBlockWrapper = styled.div`
 `;
 
 export const InfoTitle = styled.h1`
-  line-height: 1.5;
+  margin-bottom: 10px;
 `;
 
 function transitionDelayPerChild() {
@@ -78,6 +78,7 @@ export const InfoItem = styled.p`
   transform: translateY(10px);
   transition: all 0.25s ease-in-out;
   opacity: 0;
+  line-height: 1.5;
 
   ${Wrapper}:hover & {
     opacity: 1;
