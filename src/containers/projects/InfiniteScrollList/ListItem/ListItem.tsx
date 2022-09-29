@@ -1,13 +1,13 @@
 import * as S from "./ListItem.styles";
 import React, { useRef, useCallback } from "react";
+import animate from "utils/functions/animate";
+import { EASING } from "utils/functions/easing";
 
 interface Props {
   title: string;
   imageUrl: string;
   infos?: string[];
 }
-
-const initialImgTransform = `translate3d(0, -20%, 0)`;
 
 const ListItem = (props: Props) => {
   const { title, imageUrl, infos = ["example1", "example2", "example3"] } = props;
@@ -23,23 +23,37 @@ const ListItem = (props: Props) => {
     imageRef.current.style.transform = `translate3d(${x}%, ${y}%, 0)`;
   }, []);
 
+  const handleOpacity = (initialOpacity: number, newOpacity: number, duration: number) => {
+    animate({
+      fromValue: initialOpacity,
+      toValue: newOpacity,
+      onUpdate: (newOpacity, callback) => {
+        if (!imageRef.current) return;
+        imageRef.current.style.opacity = `${newOpacity}`;
+
+        callback();
+      },
+      onComplete: () => {
+        //
+      },
+      duration,
+      easeMethod: EASING.EASE_IN_OUT_CUBIC,
+    });
+  };
+
   return (
     <S.Wrapper ref={wrapperRef}>
       <S.Title
         onMouseEnter={() => {
-          if (!imageRef.current) return;
-          imageRef.current.style.opacity = "1";
+          handleOpacity(0, 1, 500);
 
           if (!wrapperRef.current) return;
           wrapperRef.current.addEventListener("mousemove", onMouseMove);
         }}
         onMouseLeave={() => {
-          if (!imageRef.current) return;
-          imageRef.current.style.opacity = "0";
-
+          handleOpacity(1, 0, 500);
           if (!wrapperRef.current) return;
           wrapperRef.current.removeEventListener("mousemove", onMouseMove);
-          imageRef.current.style.transform = initialImgTransform;
         }}
       >
         {title}

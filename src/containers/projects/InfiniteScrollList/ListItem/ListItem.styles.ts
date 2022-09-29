@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   cursor: pointer;
-  padding: 30px 0;
+  padding: 10px 0;
   line-height: 1.25;
 `;
 
@@ -10,7 +10,7 @@ export const Title = styled.h3`
   font-size: 10vw;
   text-transform: lowercase;
   z-index: 1;
-  line-height: 1.5;
+  line-height: 1.25;
   -webkit-text-stroke: 1px rgba(0, 0, 0, 0.25);
   color: transparent;
 `;
