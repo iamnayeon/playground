@@ -57,7 +57,7 @@ const InfiniteScrollList = () => {
       <S.Wrapper>
         <S.ListWrapper ref={listWrapperRef} onScroll={onScrollUpdate}>
           {renderedListItems.map((item, i) => (
-            <ListItem title={item.title} imageUrl={item.url} key={i} />
+            <ListItem title={item.title} imageUrl={item.url} key={i} index={i} />
           ))}
         </S.ListWrapper>
       </S.Wrapper>

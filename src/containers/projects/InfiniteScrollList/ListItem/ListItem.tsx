@@ -7,10 +7,11 @@ interface Props {
   title: string;
   imageUrl: string;
   infos?: string[];
+  index: number;
 }
 
 const ListItem = (props: Props) => {
-  const { title, imageUrl, infos = ["example1", "example2", "example3"] } = props;
+  const { title, imageUrl, infos = ["example1", "example2", "example3"], index } = props;
   const wrapperRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
   const [imageTransformState, _setImageTransformState] = useState({
@@ -18,6 +19,8 @@ const ListItem = (props: Props) => {
     translate: { x: 0, y: -20 },
     rotate: 0,
   });
+
+  const [isActive, setIsActive] = useState(false);
 
   const setImageTransformState = useCallback((key: string, value: any) => {
     _setImageTransformState((p) => ({ ...p, [key]: value }));
@@ -65,6 +68,8 @@ const ListItem = (props: Props) => {
     <S.Wrapper ref={wrapperRef}>
       <S.TitleWrapper
         onMouseEnter={() => {
+          setIsActive(true);
+
           handleImgAnimating(0, 1, 500, setOpacity);
           handleImgAnimating(0.8, 1, 500, (newState: number) =>
             setImageTransformState("scale", newState)
@@ -80,6 +85,8 @@ const ListItem = (props: Props) => {
           wrapperRef.current.addEventListener("mousemove", onMouseMove);
         }}
         onMouseLeave={() => {
+          setIsActive(false);
+
           handleImgAnimating(1, 0, 500, setOpacity);
           handleImgAnimating(1, 0, 500, (newState: number) =>
             setImageTransformState("scale", newState)
@@ -92,7 +99,6 @@ const ListItem = (props: Props) => {
         <S.Title>{title}</S.Title>
         <S.TitleCloned>{title}</S.TitleCloned>
       </S.TitleWrapper>
-
       <S.Image
         src={imageUrl}
         ref={imageRef}
@@ -102,6 +108,8 @@ const ListItem = (props: Props) => {
       />
 
       <S.InfoBlockWrapper>
+        <S.InfoTitle># {index + 1}</S.InfoTitle>
+
         {infos.map((info, i) => (
           <S.InfoItem key={i}>{info}</S.InfoItem>
         ))}

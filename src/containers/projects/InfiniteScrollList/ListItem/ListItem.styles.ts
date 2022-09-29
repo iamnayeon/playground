@@ -48,9 +48,40 @@ export const InfoBlockWrapper = styled.div`
   top: 50%;
   transform: translateY(-50%);
   left: 70vw;
-  z-index: 1;
+  z-index: 0;
   text-align: left;
   font-size: 20px;
   opacity: 0;
+  ${Wrapper}:hover & {
+    opacity: 1;
+  }
 `;
-export const InfoItem = styled.p``;
+
+export const InfoTitle = styled.h1`
+  line-height: 1.5;
+`;
+
+function transitionDelayPerChild() {
+  let str = "";
+  for (let i = 0; i < 4; i += 1) {
+    str += `
+        &:nth-child(${i + 1}) {
+          transition-delay: ${i / 10}s;
+         }
+      `;
+  }
+  return str;
+}
+
+export const InfoItem = styled.p`
+  color: #999;
+  transform: translateY(10px);
+  transition: all 0.25s ease-in-out;
+  opacity: 0;
+
+  ${Wrapper}:hover & {
+    opacity: 1;
+    transform: translateY(0);
+    ${transitionDelayPerChild()};
+  }
+`;
