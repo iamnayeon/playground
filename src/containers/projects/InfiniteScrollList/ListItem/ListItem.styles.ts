@@ -6,13 +6,29 @@ export const Wrapper = styled.div`
   line-height: 1.25;
 `;
 
-export const Title = styled.h3`
+export const TitleWrapper = styled.div`
+  position: relative;
+`;
+
+export const Title = styled.h1`
   font-size: 10vw;
   text-transform: lowercase;
   z-index: 1;
   line-height: 1.25;
   -webkit-text-stroke: 1px rgba(0, 0, 0, 0.25);
   color: transparent;
+`;
+
+export const TitleCloned = styled(Title)`
+  position: absolute;
+  top: 0;
+  color: black;
+  pointer-events: none;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.5s cubic-bezier(1, 0.01, 0.17, 1.17);
+  ${TitleWrapper}:hover & {
+    clip-path: inset(0 0 0 0);
+  }
 `;
 
 export const Image = styled.img`
