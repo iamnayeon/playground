@@ -1,6 +1,7 @@
 html {
   box-sizing: border-box;
-  font-family: -apple-system, Roboto, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, Roboto, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell,
+    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -66,4 +67,5 @@ img {
 *:before,
 *:after {
   user-select: none;
+  box-sizing: border-box;
 }
