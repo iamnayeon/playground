@@ -6,6 +6,7 @@ import Loader from "./components/Loader";
 import ThreeContext from "./context/ThreeContext";
 import Header from "./components/Header";
 import MediaContext, { ValidDevice } from "./context/MediaContext";
+import { defaultHeadProps, Head } from "general/Head/Head";
 
 const ToyShopModel = lazy(() => import("./components/ToyShop"));
 
@@ -35,34 +36,38 @@ export const INITIAL_CAMERA_ROTATION_BY_DEVICE: CameraSetting = {
 
 export default () => {
   return (
-    <MediaContext.Provider>
-      <ThreeContext.Provider>
-        <S.Wrapper>
-          <Suspense fallback={<Loader />}>
-            <Header />
+    <>
+      <Head {...defaultHeadProps} />
 
-            <Canvas camera={{ near: 1, fov: 45, far: 200 }}>
-              <color args={["#fffaf1"]} attach="background" />
-              <ToyShopModel />
-            </Canvas>
+      <MediaContext.Provider>
+        <ThreeContext.Provider>
+          <S.Wrapper>
+            <Suspense fallback={<Loader />}>
+              <Header />
 
-            <S.Footer>
-              <p>
-                remade a Toy Shop 3D modeling work by{" "}
-                <a
-                  style={{
-                    textDecoration: "underline",
-                  }}
-                  href="https://www.instagram.com/p/Chw0B-5qzar/?utm_source=ig_web_copy_link"
-                  target="_blank"
-                >
-                  @serpico2d.2020
-                </a>
-              </p>
-            </S.Footer>
-          </Suspense>
-        </S.Wrapper>
-      </ThreeContext.Provider>
-    </MediaContext.Provider>
+              <Canvas camera={{ near: 1, fov: 45, far: 200 }}>
+                <color args={["#fffaf1"]} attach="background" />
+                <ToyShopModel />
+              </Canvas>
+
+              <S.Footer>
+                <p>
+                  remade a Toy Shop 3D modeling work by{" "}
+                  <a
+                    style={{
+                      textDecoration: "underline",
+                    }}
+                    href="https://www.instagram.com/p/Chw0B-5qzar/?utm_source=ig_web_copy_link"
+                    target="_blank"
+                  >
+                    @serpico2d.2020
+                  </a>
+                </p>
+              </S.Footer>
+            </Suspense>
+          </S.Wrapper>
+        </ThreeContext.Provider>
+      </MediaContext.Provider>
+    </>
   );
 };

@@ -6,6 +6,11 @@ export interface HeadProps {
   ogImage?: string;
 }
 
+export const defaultHeadProps: HeadProps = {
+  title: "Nayeon Kim — Frontend developer",
+  description: "Front-end Developer based in South Korea.",
+};
+
 export const Head = (props: HeadProps) => {
   const { title = "title", description = "description", ogImage = "" } = props;
   return (
