@@ -8,7 +8,7 @@ type GLTFResult = GLTF & {
 };
 
 const ToyShop = () => {
-  const model = useGLTF("http://localhost:3000/assets/toyshop.glb") as GLTFResult;
+  const model = useGLTF("/assets/toyshop.glb") as GLTFResult;
 
   return (
     <>
@@ -47,6 +47,6 @@ const ToyShop = () => {
   );
 };
 
-useGLTF.preload("http://localhost:3000/assets/toyshop.glb");
+useGLTF.preload("/assets/toyshop.glb");
 
 export default ToyShop;
