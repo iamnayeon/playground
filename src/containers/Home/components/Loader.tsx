@@ -1,5 +1,5 @@
 import * as S from "./Loader.style";
-import { useEffect, useRef, useState, useMemo } from "react";
+import { useEffect, useRef } from "react";
 import { useProgress } from "@react-three/drei";
 import legoLoading from "../assets/lego_loading.svg";
 import Image from "next/image";

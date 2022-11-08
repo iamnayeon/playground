@@ -7,6 +7,7 @@ import ThreeContext from "./context/ThreeContext";
 import Header from "./components/Header";
 import MediaContext, { ValidDevice } from "./context/MediaContext";
 import { defaultHeadProps, Head } from "general/Head/Head";
+import { useProgress } from "@react-three/drei";
 
 const ToyShopModel = lazy(() => import("./components/ToyShop"));
 
@@ -35,6 +36,7 @@ export const INITIAL_CAMERA_ROTATION_BY_DEVICE: CameraSetting = {
 };
 
 const Home = () => {
+  const { progress } = useProgress();
   return (
     <>
       <Head {...defaultHeadProps} />
@@ -43,7 +45,7 @@ const Home = () => {
         <ThreeContext.Provider>
           <S.Wrapper>
             <Suspense fallback={<Loader />}>
-              <Header />
+              {progress === 100 && <Header />}
 
               <Canvas camera={{ near: 1, fov: 45, far: 200 }}>
                 <color args={["#fffaf1"]} attach="background" />
