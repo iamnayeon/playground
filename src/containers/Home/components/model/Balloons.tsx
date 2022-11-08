@@ -21,6 +21,7 @@ const Balloons = () => {
           />
         </group>
       </Float> */}
+      {/* @ts-ignore */}
       <Float>
         <group position={[-7.5, 9.26, 4.56]} rotation={[0.16, 0, 0]}>
           <mesh
@@ -37,6 +38,7 @@ const Balloons = () => {
           />
         </group>
       </Float>
+      {/* @ts-ignore */}
       <Float>
         <group position={[-6.39, 9.32, 3.58]} rotation={[0.05, 0, -0.09]}>
           <mesh
@@ -53,6 +55,7 @@ const Balloons = () => {
           />
         </group>
       </Float>
+      {/* @ts-ignore */}
       <Float>
         <group position={[-6.93, 6.09, 2.89]} rotation={[0, 0, -0.09]}>
           <mesh

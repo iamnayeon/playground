@@ -33,20 +33,10 @@ const ToyShop = () => {
           <Bounds>
             <CameraController />
 
-            <group>
-              <House />
-              <Robot />
-              <Balloons />
-              <Floor />
-              <Plane
-                receiveShadow
-                rotation={[-Math.PI / 2, 0, 0]}
-                position={[0, -3, 0]}
-                args={[2000, 2000]}
-              >
-                <shadowMaterial attach="material" opacity={0.1} />
-              </Plane>
-            </group>
+            <House />
+            <Robot />
+            <Balloons />
+            <Floor />
           </Bounds>
         </PresentationControls>
       </ScrollControls>
