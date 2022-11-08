@@ -43,7 +43,7 @@ const Balloons = () => {
             castShadow
             receiveShadow
             geometry={nodes.Sphere006.geometry}
-            material={materials["balloon-purple"]}
+            material={materials["balloon-yellow"]}
           />
           <mesh
             castShadow
