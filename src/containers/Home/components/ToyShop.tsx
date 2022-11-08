@@ -44,7 +44,7 @@ const ToyShop = () => {
                 position={[0, -3, 0]}
                 args={[2000, 2000]}
               >
-                <shadowMaterial attach="material" color="#fffaf1" opacity={0.5} />
+                <shadowMaterial attach="material" opacity={0.1} />
               </Plane>
             </group>
           </Bounds>
