@@ -11,7 +11,7 @@ import { useContainer } from "unstated-next";
 import ThreeContext from "../context/ThreeContext";
 
 import MediaContext from "../context/MediaContext";
-export default () => {
+const CameraController = () => {
   const { setScroll, setThree } = useContainer(ThreeContext);
   const { media: _media } = useContainer(MediaContext);
   const scroll = useScroll();
@@ -58,3 +58,5 @@ export default () => {
 
   return <></>;
 };
+
+export default CameraController;

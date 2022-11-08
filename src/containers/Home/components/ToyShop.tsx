@@ -1,8 +1,14 @@
 import { useGLTF, PresentationControls, Bounds, ScrollControls } from "@react-three/drei";
 import ToyScreen from "./ToyScreen";
 import CameraController from "../camera/CameraController";
-export default () => {
-  const model = useGLTF("http://localhost:3000/assets/toyshop.glb");
+import { GLTF } from "three-stdlib";
+
+type GLTFResult = GLTF & {
+  nodes: any;
+};
+
+const ToyShop = () => {
+  const model = useGLTF("http://localhost:3000/assets/toyshop.glb") as GLTFResult;
 
   return (
     <>
@@ -42,3 +48,5 @@ export default () => {
 };
 
 useGLTF.preload("http://localhost:3000/assets/toyshop.glb");
+
+export default ToyShop;

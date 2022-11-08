@@ -7,7 +7,7 @@ import linkedinIcon from "../assets/linkedin_icon.svg";
 import underlineIcon from "../assets/dynamic_underline_icon.svg";
 import pageScrollDownIcon from "../assets/page_scroll_icon.svg";
 
-export default () => {
+const Me = () => {
   return (
     <S.Wrapper>
       <S.Header>
@@ -32,7 +32,7 @@ export default () => {
       </S.Header>
       <S.IntroduceWrapper>
         <S.Sentence>
-          <S.String>Hi I'm&nbsp;</S.String>
+          <S.String>Hi I&apos;m&nbsp;</S.String>
           <S.String style={{ color: "#BF697F" }}>N</S.String>
           <S.String style={{ color: "#6EAC9A" }}>a</S.String>
           <S.String style={{ color: "#AF8CD8" }}>y</S.String>
@@ -77,3 +77,5 @@ const SNSIcon = ({ src, onClick }: { src: string; onClick: any }) => {
     </S.IconWrapper>
   );
 };
+
+export default Me;

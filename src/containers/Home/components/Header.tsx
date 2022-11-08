@@ -2,7 +2,7 @@ import { useContainer } from "unstated-next";
 import * as S from "./Header.style";
 import ThreeContext from "../context/ThreeContext";
 
-export default () => {
+const Header = () => {
   const { scroll, three } = useContainer(ThreeContext);
 
   return (
@@ -20,3 +20,5 @@ export default () => {
     </S.Header>
   );
 };
+
+export default Header;

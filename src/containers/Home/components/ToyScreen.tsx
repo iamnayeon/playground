@@ -2,7 +2,7 @@ import { useRef, useEffect } from "react";
 import { Html } from "@react-three/drei";
 import Me from "./Me";
 import * as S from "./ToyScreen.style";
-export default ({ object }: { object: any }) => {
+const ToyScreen = ({ object }: { object: any }) => {
   const htmlRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -34,3 +34,5 @@ export default ({ object }: { object: any }) => {
     </group>
   );
 };
+
+export default ToyScreen;

@@ -34,7 +34,7 @@ export const INITIAL_CAMERA_ROTATION_BY_DEVICE: CameraSetting = {
   desktop: { x: 0, y: 0, z: 0 },
 };
 
-export default () => {
+const Home = () => {
   return (
     <>
       <Head {...defaultHeadProps} />
@@ -59,6 +59,7 @@ export default () => {
                     }}
                     href="https://www.instagram.com/p/Chw0B-5qzar/?utm_source=ig_web_copy_link"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     @serpico2d.2020
                   </a>
@@ -71,3 +72,5 @@ export default () => {
     </>
   );
 };
+
+export default Home;

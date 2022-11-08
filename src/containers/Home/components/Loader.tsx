@@ -4,7 +4,7 @@ import { useProgress } from "@react-three/drei";
 import legoLoading from "../assets/lego_loading.svg";
 import Image from "next/image";
 
-export default () => {
+const Loader = () => {
   const { progress } = useProgress();
 
   const progressBar = useRef<HTMLDivElement>(null);
@@ -28,3 +28,5 @@ export default () => {
     </S.Wrapper>
   );
 };
+
+export default Loader;
