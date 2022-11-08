@@ -40,6 +40,7 @@ export const Progress = styled.div`
   position: absolute;
   background-color: black;
   height: 100%;
+  left: 0;
 `;
 
 export const Text = styled.p`

@@ -2,8 +2,11 @@ import { useRef, useEffect } from "react";
 import { Html } from "@react-three/drei";
 import Me from "./Me";
 import * as S from "./ToyScreen.style";
-const ToyScreen = ({ object }: { object: any }) => {
+import { GLTFResult } from "./ToyShop";
+import { useGLTF } from "@react-three/drei";
+const ToyScreen = () => {
   const htmlRef = useRef<HTMLDivElement>(null);
+  const { nodes } = useGLTF("/assets/toyshop.glb") as GLTFResult;
 
   useEffect(() => {
     if (htmlRef.current) {
@@ -23,15 +26,13 @@ const ToyScreen = ({ object }: { object: any }) => {
   }, []);
 
   return (
-    <group>
-      <primitive object={object}>
-        <Html ref={htmlRef} transform occlude distanceFactor={0.72} position={[0, 0, 0.21]}>
-          <S.Wrapper>
-            <Me />
-          </S.Wrapper>
-        </Html>
-      </primitive>
-    </group>
+    <primitive object={nodes.screen}>
+      <Html ref={htmlRef} transform occlude distanceFactor={0.72} position={[0, 0, 0.21]}>
+        <S.Wrapper>
+          <Me />
+        </S.Wrapper>
+      </Html>
+    </primitive>
   );
 };
 

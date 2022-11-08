@@ -11,8 +11,7 @@ const Header = () => {
         onClick={() => {
           if (!scroll || !three) return;
           scroll.el.scrollTop = 0;
-          three.scene.rotation.y = 0;
-          three.scene.rotation.x = 0;
+          three.scene.rotation.set(0, 0, 0);
         }}
       >
         Nayeon Kim

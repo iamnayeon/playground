@@ -47,7 +47,7 @@ const Home = () => {
             <Suspense fallback={<Loader />}>
               {progress === 100 && <Header />}
 
-              <Canvas camera={{ near: 1, fov: 45, far: 200 }}>
+              <Canvas shadows camera={{ near: 1, fov: 45, far: 200 }}>
                 <color args={["#fffaf1"]} attach="background" />
                 <ToyShopModel />
               </Canvas>
