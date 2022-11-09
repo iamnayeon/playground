@@ -56,7 +56,7 @@ const Me = () => {
 
           <S.String>visualization</S.String>
         </S.Sentence>
-        <S.DownloadButtonWrapper href="/assets/Nayeon_Kim.pdf" download>
+        <S.DownloadButtonWrapper href="/assets/Nayeon_Kim_resume2022.pdf" download>
           <S.DownloadButtonInner>Download Resume</S.DownloadButtonInner>
         </S.DownloadButtonWrapper>
       </S.IntroduceWrapper>
