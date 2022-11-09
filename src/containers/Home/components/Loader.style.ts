@@ -19,7 +19,7 @@ export const Wrapper = styled.div`
 `;
 
 export const ImageWrapper = styled.div`
-  width: 30vw;
+  width: 50vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,7 +40,6 @@ export const Progress = styled.div`
   position: absolute;
   background-color: black;
   height: 100%;
-  left: 0;
 `;
 
 export const Text = styled.p`
