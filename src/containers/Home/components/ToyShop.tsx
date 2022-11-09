@@ -1,5 +1,5 @@
 import { useGLTF, PresentationControls, Bounds, ScrollControls } from "@react-three/drei";
-import { Plane } from "@react-three/drei";
+import ToyScreen from "./ToyScreen";
 import CameraController from "../camera/CameraController";
 import { GLTF } from "three-stdlib";
 import Balloons from "./model/Balloons";
@@ -37,6 +37,8 @@ const ToyShop = () => {
             <Robot />
             <Balloons />
             <Floor />
+
+            <ToyScreen />
           </Bounds>
         </PresentationControls>
       </ScrollControls>
