@@ -52,21 +52,23 @@ const Home = () => {
                 <ToyShopModel />
               </Canvas>
 
-              <S.Footer>
-                <p>
-                  remade a Toy Shop 3D modeling work by{" "}
-                  <a
-                    style={{
-                      textDecoration: "underline",
-                    }}
-                    href="https://www.instagram.com/p/Chw0B-5qzar/?utm_source=ig_web_copy_link"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    @serpico2d.2020
-                  </a>
-                </p>
-              </S.Footer>
+              {progress === 100 && (
+                <S.Footer>
+                  <p>
+                    remade a Toy Shop 3D modeling work by{" "}
+                    <a
+                      style={{
+                        textDecoration: "underline",
+                      }}
+                      href="https://www.instagram.com/p/Chw0B-5qzar/?utm_source=ig_web_copy_link"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      @serpico2d.2020
+                    </a>
+                  </p>
+                </S.Footer>
+              )}
             </Suspense>
           </S.Wrapper>
         </ThreeContext.Provider>
