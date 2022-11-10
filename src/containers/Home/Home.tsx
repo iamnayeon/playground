@@ -55,7 +55,7 @@ const Home = () => {
               {progress === 100 && (
                 <S.Footer>
                   <p>
-                    remade a Toy Shop 3D modeling of
+                    remade a Toy Shop 3D modeling of{" "}
                     <a
                       style={{
                         textDecoration: "underline",
