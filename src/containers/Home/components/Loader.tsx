@@ -20,11 +20,11 @@ const Loader = () => {
         <Image src={legoLoading} />
       </S.ImageWrapper>
 
-      <S.ProgressBarContainer>
+      {/* <S.ProgressBarContainer>
         <S.Progress ref={progressBar} />
       </S.ProgressBarContainer>
 
-      <S.Text>loading...</S.Text>
+      <S.Text>loading...</S.Text> */}
     </S.Wrapper>
   );
 };
