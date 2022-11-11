@@ -4,9 +4,10 @@ import Me from "./Me";
 import * as S from "./ToyScreen.style";
 import { GLTFResult } from "./ToyShop";
 import { useGLTF } from "@react-three/drei";
+import { useControls } from "leva";
 const ToyScreen = () => {
   const htmlRef = useRef<HTMLDivElement>(null);
-  const { nodes } = useGLTF("/assets/toyshop.glb") as GLTFResult;
+  const { nodes, materials } = useGLTF("/assets/toyshop.glb") as GLTFResult;
 
   useEffect(() => {
     if (htmlRef.current) {
@@ -25,9 +26,14 @@ const ToyScreen = () => {
     }
   }, []);
 
+  // const htmlControl = useControls({
+  //   distanceFactor: 0.72,
+  //   position: { value: { x: 0, y: 0, z: 0.21 } },
+  // });
+
   return (
     <primitive object={nodes.screen}>
-      <Html ref={htmlRef} transform occlude distanceFactor={0.72} position={[0, 0, 0.21]}>
+      <Html ref={htmlRef} occlude transform center distanceFactor={0.72} position={[0, 0, 0.21]}>
         <S.Wrapper>
           <Me />
         </S.Wrapper>
