@@ -31,16 +31,21 @@ const CameraController = () => {
   const defaultCameraRotation = DEFAULT_CAMERA_ROTATION_BY_DEVICE[media];
 
   useFrame((state) => {
+    const offset = Math.min(Math.max(scroll.offset, 0), 1);
     state.camera.position.set(
-      scroll.offset * (defaultCameraPosition.x - initialCameraPosition.x) + initialCameraPosition.x,
-      scroll.offset * (defaultCameraPosition.y - initialCameraPosition.y) + initialCameraPosition.y,
-      scroll.offset * (defaultCameraPosition.z - initialCameraPosition.z) + initialCameraPosition.z
+      offset * (defaultCameraPosition.x - initialCameraPosition.x) + initialCameraPosition.x,
+      offset * (defaultCameraPosition.y - initialCameraPosition.y) + initialCameraPosition.y,
+      offset * (defaultCameraPosition.z - initialCameraPosition.z) + initialCameraPosition.z
     );
     state.camera.rotation.set(
-      scroll.offset * (defaultCameraRotation.x - initialCameraRotation.x) + initialCameraRotation.x,
-      scroll.offset * (defaultCameraRotation.y - initialCameraRotation.y) + initialCameraRotation.y,
-      scroll.offset * (defaultCameraRotation.z - initialCameraRotation.z) + initialCameraRotation.z
+      offset * (defaultCameraRotation.x - initialCameraRotation.x) + initialCameraRotation.x,
+      offset * (defaultCameraRotation.y - initialCameraRotation.y) + initialCameraRotation.y,
+      offset * (defaultCameraRotation.z - initialCameraRotation.z) + initialCameraRotation.z
     );
+
+    if (scroll.el.scrollTop === 0) {
+      three.scene.rotation.set(0, 0, 0);
+    }
   });
 
   useEffect(() => {
