@@ -61,7 +61,7 @@ const CameraController = () => {
     };
   }, []);
 
-  return <></>;
+  return null;
 };
 
 export default CameraController;
