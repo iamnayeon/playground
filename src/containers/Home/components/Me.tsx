@@ -70,10 +70,10 @@ const Me = () => {
   );
 };
 
-const SNSIcon = ({ src, onClick }: { src: string; onClick: any }) => {
+const SNSIcon = ({ src, onClick, alt }: { src: string; onClick: any; alt?: string }) => {
   return (
     <S.IconWrapper onClick={onClick}>
-      <Image src={src} width="25px" height="25px" />
+      <Image src={src} width="25px" height="25px" alt={alt || ""} />
     </S.IconWrapper>
   );
 };
