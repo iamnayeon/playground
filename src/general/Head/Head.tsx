@@ -1,3 +1,6 @@
+/**
+ * Dynamic head
+ * */
 import NextHead from "next/head";
 
 export interface HeadProps {

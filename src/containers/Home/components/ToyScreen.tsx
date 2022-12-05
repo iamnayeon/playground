@@ -1,9 +1,8 @@
 import { useRef, useEffect } from "react";
-import { Html } from "@react-three/drei";
 import Me from "./Me";
 import * as S from "./ToyScreen.style";
 import { GLTFResult } from "./ToyShop";
-import { useGLTF } from "@react-three/drei";
+import { useGLTF, Html } from "@react-three/drei";
 import { useControls } from "leva";
 const ToyScreen = () => {
   const htmlRef = useRef<HTMLDivElement>(null);
@@ -11,7 +10,10 @@ const ToyScreen = () => {
 
   useEffect(() => {
     if (htmlRef.current) {
-      //   //events for fixing problem of disabled scrolling on the html section
+      /**
+       * events for fixing problem of disabled scrolling on the html section
+       */
+
       const htmlWrapperByDrei = htmlRef.current.parentElement as HTMLDivElement;
       const mouseMoveHandler = () => {
         htmlWrapperByDrei.style.pointerEvents = "auto";
