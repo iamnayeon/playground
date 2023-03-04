@@ -28,7 +28,7 @@ const ToyShop = () => {
       />
       <ambientLight intensity={0.5} />
 
-      <ScrollControls pages={2} damping={3}>
+      <ScrollControls pages={2} damping={1}>
         <PresentationControls global polar={[0, 0]} azimuth={[-0.5, 0.25]}>
           <Bounds>
             <CameraController />

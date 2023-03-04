@@ -10,13 +10,13 @@
     "deploy": "next build && next export"
   },
   "dependencies": {
-    "@react-three/drei": "^8.10.7",
-    "@react-three/fiber": "^8.9.0",
+    "@react-three/drei": "^9.40.4",
+    "@react-three/fiber": "^8.10.0",
     "gsap": "^3.11.3",
     "leva": "^0.9.34",
     "lodash.debounce": "^4.0.8",
-    "react": "18.2.0",
     "next": "12.3.1",
+    "react": "18.2.0",
     "react-dom": "18.2.0",
     "sass": "^1.55.0",
     "styled-components": "^5.3.5",
@@ -30,12 +30,14 @@
     "@types/react-dom": "18.0.6",
     "@types/styled-components": "^5.1.26",
     "@types/three": "^0.146.0",
+    "@types/webgi": "https://dist.pixotronics.com/webgi/runtime/bundle-types-0.6.1.tgz",
     "babel-plugin-styled-components": "^2.0.7",
     "eslint": "8.24.0",
     "eslint-config-next": "12.3.1",
     "file-loader": "^6.2.0",
     "lil-gui": "^0.17.0",
     "prettier": "^2.7.1",
-    "typescript": "4.8.3"
+    "typescript": "4.8.3",
+    "webgi": "https://dist.pixotronics.com/webgi/runtime/bundle-0.6.1.tgz"
   }
 }
