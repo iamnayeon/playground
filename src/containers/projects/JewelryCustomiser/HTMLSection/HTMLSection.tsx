@@ -212,12 +212,18 @@ const HTMLSection = ({ meshesMap }: HTMLSectionProps) => {
         z: SCENE_DEFAULT_SETTING.customizing.position.z,
         duration: 1,
         onComplete: () => {
+          if (!three.controls) return;
+          //@ts-ignore
           three.controls.enabled = true;
+          //@ts-ignore
           three.controls.autoRotate = true;
         },
       });
     } else {
+      if (!three.controls) return;
+      //@ts-ignore
       three.controls.enabled = false;
+      //@ts-ignore
       three.controls.autoRotate = false;
 
       initCameraSetting();

@@ -21,8 +21,6 @@ const JewelryCustomiser = () => {
 
   //const isLoaded = useMemo(() => progressValue === 1, [progressValue]);
 
-  const controlRef = useRef();
-
   return (
     <S.Wrapper>
       <Canvas
@@ -53,9 +51,9 @@ const JewelryCustomiser = () => {
           </Scroll>
         </ScrollControls>
 
-        {/* @ts-ignore */}
-        <OrbitControls enabled={false} ref={controlRef} makeDefault />
+        <OrbitControls enabled={false} makeDefault />
         <Environment files="https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/aerodynamics_workshop_1k.hdr" />
+        {/* @ts-ignore */}
         <RandomizedLight
           amount={8}
           radius={10}

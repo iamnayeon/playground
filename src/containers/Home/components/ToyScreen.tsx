@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react";
 import Me from "./Me";
 import * as S from "./ToyScreen.style";
-import { GLTFResult } from "./ToyShop";
+import { GLTFResult } from "types/model";
 import { useGLTF, Html } from "@react-three/drei";
 import { useControls } from "leva";
 import { useThree } from "@react-three/fiber";

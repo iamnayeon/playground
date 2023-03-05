@@ -1,16 +1,10 @@
 import { useGLTF, PresentationControls, Bounds, ScrollControls } from "@react-three/drei";
 import ToyScreen from "./ToyScreen";
 import CameraController from "../camera/CameraController";
-import { GLTF } from "three-stdlib";
 import Balloons from "./model/Balloons";
 import Robot from "./model/Robot";
 import Floor from "./model/Floor";
 import House from "./model/House";
-
-export type GLTFResult = GLTF & {
-  nodes: any;
-  materials: any;
-};
 
 const ToyShop = () => {
   return (

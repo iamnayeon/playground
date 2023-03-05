@@ -1,4 +1,4 @@
-import { GLTFResult } from "../ToyShop";
+import { GLTFResult } from "types/model";
 import { useGLTF } from "@react-three/drei";
 
 const Robot = () => {

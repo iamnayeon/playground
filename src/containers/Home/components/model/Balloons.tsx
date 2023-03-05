@@ -1,4 +1,4 @@
-import { GLTFResult } from "../ToyShop";
+import { GLTFResult } from "types/model";
 import { Float, useGLTF } from "@react-three/drei";
 
 const Balloons = () => {
