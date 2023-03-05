@@ -1,16 +1,10 @@
 import { useGLTF, PresentationControls, Bounds, ScrollControls } from "@react-three/drei";
 import ToyScreen from "./ToyScreen";
 import CameraController from "../camera/CameraController";
-import { GLTF } from "three-stdlib";
 import Balloons from "./model/Balloons";
 import Robot from "./model/Robot";
 import Floor from "./model/Floor";
 import House from "./model/House";
-
-export type GLTFResult = GLTF & {
-  nodes: any;
-  materials: any;
-};
 
 const ToyShop = () => {
   return (
@@ -28,7 +22,7 @@ const ToyShop = () => {
       />
       <ambientLight intensity={0.5} />
 
-      <ScrollControls pages={2} damping={3}>
+      <ScrollControls pages={2} damping={1}>
         <PresentationControls global polar={[0, 0]} azimuth={[-0.5, 0.25]}>
           <Bounds>
             <CameraController />

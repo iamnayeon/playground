@@ -1,12 +1,14 @@
 import { useRef, useEffect } from "react";
 import Me from "./Me";
 import * as S from "./ToyScreen.style";
-import { GLTFResult } from "./ToyShop";
+import { GLTFResult } from "types/model";
 import { useGLTF, Html } from "@react-three/drei";
 import { useControls } from "leva";
+import { useThree } from "@react-three/fiber";
 const ToyScreen = () => {
   const htmlRef = useRef<HTMLDivElement>(null);
   const { nodes } = useGLTF("/assets/toyshop.glb") as GLTFResult;
+  const { gl } = useThree();
 
   useEffect(() => {
     if (htmlRef.current) {
@@ -39,7 +41,14 @@ const ToyScreen = () => {
 
   return (
     <primitive object={nodes.screen}>
-      <Html ref={htmlRef} occlude transform distanceFactor={0.73} position={[0, 0, 0.07]}>
+      <Html
+        ref={htmlRef}
+        occlude
+        transform
+        distanceFactor={0.73}
+        position={[0, 0, 0.07]}
+        portal={{ current: gl.domElement.parentNode as HTMLElement }}
+      >
         <S.Wrapper>
           <Me />
         </S.Wrapper>

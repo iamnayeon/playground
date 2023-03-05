@@ -1,13 +1,34 @@
 @font-face {
   font-family: "montserrat";
-  font-weight: 500;
+  font-weight: normal;
   font-display: swap;
   src: url("/fonts/Montserrat-Medium.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "lexendDeca";
-  font-weight: 500;
+  font-weight: normal;
   font-display: swap;
   src: url("/fonts/LexendDeca-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "cormorant";
+  font-weight: normal;
+  font-display: swap;
+  src: url("/fonts/CormorantGaramond-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "cormorant";
+  font-weight: bold;
+  font-display: swap;
+  src: url("/fonts/CormorantGaramond-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "cormorant";
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/CormorantGaramond-Light.ttf") format("truetype");
 }
